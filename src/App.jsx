@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Section from './components/Section.jsx'
 import MarkdownBlock from './components/MarkdownBlock.jsx'
+import ArchitectureDiagram from './components/ArchitectureDiagram.jsx'
 import PipelineDiagram from './components/PipelineDiagram.jsx'
 import RagPlayground from './components/RagPlayground.jsx'
 import Quiz from './components/Quiz.jsx'
@@ -57,11 +58,21 @@ export default function App() {
           <Quiz quiz={quizzes.why} />
         </Section>
 
-        <Section id="pipeline" kicker="How it works" title="The architecture & pipeline">
+        <Section id="pipeline" kicker="How it works" title="The architecture & workflow">
           <MarkdownBlock>{docs.architecture}</MarkdownBlock>
+
+          <h3 className="block-title">The complete RAG workflow</h3>
+          <p className="section-lead">
+            The full picture: both phases and how every component connects. Arrows show the
+            direction data flows. The <strong>vector database</strong> and the{' '}
+            <strong>embedding model</strong> are shared across both phases — that's what ties
+            ingestion to retrieval.
+          </p>
+          <ArchitectureDiagram />
+
           <div className="callout">
             <span className="callout-tag">Interactive</span>
-            Click through the five answer-time stages:
+            Now step through just the five answer-time stages, one at a time:
           </div>
           <PipelineDiagram />
           <MarkdownBlock>{docs.pipeline}</MarkdownBlock>
