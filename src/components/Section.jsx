@@ -8,7 +8,8 @@ export default function Section({ id, kicker, title, children, className = '' })
         className="section-inner"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
+        /* small amount so tall sections still reveal when jumped to via an anchor link */
+        viewport={{ once: true, amount: 0.01 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         {(kicker || title) && (

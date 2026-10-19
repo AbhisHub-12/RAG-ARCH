@@ -3,7 +3,9 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Section from './components/Section.jsx'
 import MarkdownBlock from './components/MarkdownBlock.jsx'
+import FlowStrip from './components/FlowStrip.jsx'
 import ArchitectureDiagram from './components/ArchitectureDiagram.jsx'
+import Connections from './components/Connections.jsx'
 import PipelineDiagram from './components/PipelineDiagram.jsx'
 import RagPlayground from './components/RagPlayground.jsx'
 import Quiz from './components/Quiz.jsx'
@@ -50,15 +52,43 @@ export default function App() {
       <main>
         <Section id="what" kicker="Start here" title="What is RAG?">
           <MarkdownBlock>{docs['what-is-rag']}</MarkdownBlock>
-          <Quiz quiz={quizzes.basics} />
         </Section>
 
         <Section id="why" kicker="Motivation" title="Why RAG?">
           <MarkdownBlock>{docs['why-rag']}</MarkdownBlock>
-          <Quiz quiz={quizzes.why} />
         </Section>
 
-        <Section id="pipeline" kicker="How it works" title="The architecture & workflow">
+        <Section id="architecture" kicker="The main event" title="RAG architecture & how it works">
+          <p className="section-lead">
+            A RAG system has <strong>two phases</strong> — think of them as{' '}
+            <em>getting the library ready</em>, then <em>answering a question</em>:
+          </p>
+          <FlowStrip
+            tone="ingest"
+            title="Phase 1 · Ingestion"
+            note="offline · run once, ahead of time"
+            steps={[
+              { label: 'Documents', sub: 'PDFs · web · notes' },
+              { label: 'Chunking', sub: 'split into passages' },
+              { label: 'Embedding', sub: 'text → vectors' },
+              { label: 'Vector Database', sub: 'store + index' },
+            ]}
+          />
+          <FlowStrip
+            tone="retrieve"
+            title="Phase 2 · Retrieval + Generation"
+            note="online · runs every question"
+            steps={[
+              { label: 'User question' },
+              { label: 'Embed', sub: 'question → vector' },
+              { label: 'Search', sub: 'find similar' },
+              { label: 'Top-K chunks', sub: 'best matches' },
+              { label: 'Augment', sub: 'build prompt' },
+              { label: 'Generate', sub: 'LLM writes' },
+              { label: 'Answer', sub: '+ citations' },
+            ]}
+          />
+
           <MarkdownBlock>{docs.architecture}</MarkdownBlock>
 
           <h3 className="block-title">The complete RAG workflow</h3>
@@ -70,6 +100,8 @@ export default function App() {
           </p>
           <ArchitectureDiagram />
 
+          <Connections />
+
           <div className="callout">
             <span className="callout-tag">Interactive</span>
             Now step through just the five answer-time stages, one at a time:
@@ -78,20 +110,23 @@ export default function App() {
           <MarkdownBlock>{docs.pipeline}</MarkdownBlock>
         </Section>
 
-        <Section id="concepts" kicker="Deep dive" title="The core concepts">
+        <Section id="theory" kicker="The why behind it" title="The theory behind RAG">
+          <MarkdownBlock>{docs.theory}</MarkdownBlock>
+        </Section>
+
+        <Section id="concepts" kicker="Deep dive" title="The core components, up close">
           <p className="section-lead">
-            Five building blocks power every RAG system. Expand each to learn it in plain
-            English.
+            Five building blocks power every RAG system. Expand each to see how it works and
+            how it connects to the steps around it.
           </p>
           <div className="concepts">
             {CONCEPTS.map((c) => (
               <ConceptCard key={c.key} concept={c} />
             ))}
           </div>
-          <Quiz quiz={quizzes.concepts} />
         </Section>
 
-        <Section id="playground" kicker="Try it yourself" title="RAG Playground">
+        <Section id="playground" kicker="See it move" title="RAG Playground">
           <p className="section-lead">
             Ask the tiny help-desk a question and watch a full RAG cycle run — chunk match,
             retrieval scores, the assembled prompt, and the grounded answer. Everything runs
@@ -110,7 +145,10 @@ export default function App() {
           <Glossary />
         </Section>
 
-        <Section id="quiz" kicker="Test yourself" title="Final knowledge check">
+        <Section id="recap" kicker="Optional" title="Quick recap">
+          <p className="section-lead">
+            A short, optional check — if you can answer these, you've got the core ideas.
+          </p>
           <Quiz quiz={quizzes.final} />
         </Section>
       </main>

@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react'
 const LINKS = [
   { id: 'what', label: 'What' },
   { id: 'why', label: 'Why' },
-  { id: 'pipeline', label: 'Pipeline' },
-  { id: 'concepts', label: 'Concepts' },
+  { id: 'architecture', label: 'Architecture' },
+  { id: 'theory', label: 'Theory' },
+  { id: 'concepts', label: 'Components' },
   { id: 'playground', label: 'Playground' },
   { id: 'beyond', label: 'Beyond' },
   { id: 'glossary', label: 'Glossary' },
-  { id: 'quiz', label: 'Quiz' },
 ]
 
 export default function Navbar() {

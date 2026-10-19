@@ -9,9 +9,9 @@ const WORDS = [
 const LEARN = [
   'What RAG is',
   'Why it beats a plain LLM',
-  'The 5-step pipeline',
-  'Chunking & embeddings',
-  'Vector databases',
+  'The full architecture',
+  'How every piece connects',
+  'The theory behind it',
   'A hands-on walkthrough',
 ]
 

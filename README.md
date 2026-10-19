@@ -24,9 +24,11 @@ readable markdown in [`/docs`](./docs).
 
 - **What RAG is** and the open-book-exam intuition behind it
 - **Why** it beats a plain LLM (hallucinations, stale/private data, citations)
-- **RAG vs fine-tuning** — when to use which
-- The **5-step pipeline**: Query → Embed → Retrieve → Augment → Generate
-- The core building blocks: **chunking, embeddings, vector databases, retrieval, generation**
+- **The full architecture** — both phases, and **how every component connects** (what data
+  flows on each arrow, and the two shared bridges: the vector DB and the embedding model)
+- The **theory behind RAG** — why embeddings capture meaning, why nearest-neighbor search
+  finds relevant text, and why grounding generation in retrieved context reduces hallucination
+- The core components, up close: **chunking, embeddings, vector databases, retrieval, generation**
 - A **hands-on walkthrough** of a tiny RAG system end to end
 - Where RAG goes next: **multimodal RAG (RAG-Anything), GraphRAG, agentic RAG**
 
@@ -34,10 +36,12 @@ readable markdown in [`/docs`](./docs).
 
 | Feature | What it does |
 |---------|--------------|
+| 🗺️ **Architecture diagram** | The complete workflow as a labeled diagram with directional arrows and the two cross-phase connections (shared vector DB and embedding model). Click any box for its role. |
+| 🔗 **Connections breakdown** | "Follow the data" — every arrow explained: what travels on it and why the connection exists. |
 | 🧭 **Animated pipeline** | Click through the five answer-time stages, each explained in plain English. |
 | 🧪 **RAG Playground** | Ask a tiny help-desk a question and watch a full RAG cycle run — retrieval scores, the assembled prompt, and the grounded answer. 100% client-side, no API key. |
-| ❓ **Quizzes** | Short knowledge checks after each section, plus a final quiz. |
 | 🔍 **Searchable glossary** | 30+ RAG terms with plain-English definitions, filterable as you type. |
+| ❓ **Optional recap** | One short self-check at the end — the focus is the architecture and theory, not quizzes. |
 
 ## The lessons (also readable on GitHub)
 
@@ -55,7 +59,8 @@ truth the site renders:
 9. [Generation](./docs/09-generation.md)
 10. [Hands-on walkthrough](./docs/10-hands-on-walkthrough.md)
 11. [Beyond the basics (RAG-Anything, GraphRAG, agentic RAG)](./docs/11-rag-anything.md)
-12. [Glossary](./docs/glossary.md)
+12. [The theory behind RAG (why it works)](./docs/12-theory.md)
+13. [Glossary](./docs/glossary.md)
 
 ## Run it locally
 

@@ -12,6 +12,7 @@ import retrieval from '../../docs/08-retrieval.md?raw'
 import generation from '../../docs/09-generation.md?raw'
 import handsOn from '../../docs/10-hands-on-walkthrough.md?raw'
 import ragAnything from '../../docs/11-rag-anything.md?raw'
+import theory from '../../docs/12-theory.md?raw'
 
 export const docs = {
   'what-is-rag': whatIsRag,
@@ -25,4 +26,5 @@ export const docs = {
   generation,
   'hands-on': handsOn,
   'rag-anything': ragAnything,
+  theory,
 }
