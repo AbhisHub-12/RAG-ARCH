@@ -38,16 +38,28 @@ export default function ProjectPage() {
 
           <FlowConnections edges={project.flowEdges} tone={project.flow.tone} />
 
-          {project.buildDoc && (
-            <Link to={`/projects/${project.slug}/build`} className="build-cta">
-              <span className="build-cta-icon">🧱</span>
-              <span className="build-cta-text">
-                <strong>Deep build guide</strong>
-                <span>Phase-by-phase, with real copy-pasteable code — build {project.name} from an empty folder.</span>
-              </span>
-              <span className="build-cta-arrow">→</span>
-            </Link>
-          )}
+          <div className="cta-row">
+            {project.buildDoc && (
+              <Link to={`/projects/${project.slug}/build`} className="build-cta">
+                <span className="build-cta-icon">🧱</span>
+                <span className="build-cta-text">
+                  <strong>Deep build guide</strong>
+                  <span>Phase-by-phase, with real copy-pasteable code — build {project.name} from an empty folder.</span>
+                </span>
+                <span className="build-cta-arrow">→</span>
+              </Link>
+            )}
+            {project.interviewDoc && (
+              <Link to={`/projects/${project.slug}/interview`} className="build-cta build-cta--interview">
+                <span className="build-cta-icon">🎤</span>
+                <span className="build-cta-text">
+                  <strong>Interview questions</strong>
+                  <span>Graded easy → advanced for 3+ years — a self-test on {project.name}.</span>
+                </span>
+                <span className="build-cta-arrow">→</span>
+              </Link>
+            )}
+          </div>
 
           <MarkdownBlock>{project.doc}</MarkdownBlock>
         </div>

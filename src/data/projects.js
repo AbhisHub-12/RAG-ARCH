@@ -4,6 +4,8 @@ import netpulseDoc from '../../docs/projects/netpulse.md?raw'
 import intentnetDoc from '../../docs/projects/intentnet.md?raw'
 import netpulseBuild from '../../docs/projects/netpulse-build.md?raw'
 import intentnetBuild from '../../docs/projects/intentnet-build.md?raw'
+import netpulseInterview from '../../docs/projects/netpulse-interview.md?raw'
+import intentnetInterview from '../../docs/projects/intentnet-interview.md?raw'
 
 export const projects = [
   {
@@ -36,6 +38,7 @@ export const projects = [
     ],
     doc: netpulseDoc,
     buildDoc: netpulseBuild,
+    interviewDoc: netpulseInterview,
   },
   {
     slug: 'intentnet',
@@ -67,6 +70,7 @@ export const projects = [
     ],
     doc: intentnetDoc,
     buildDoc: intentnetBuild,
+    interviewDoc: intentnetInterview,
   },
 ]
 
