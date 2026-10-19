@@ -4,6 +4,7 @@ import Landing from './pages/Landing.jsx'
 import RagPage from './pages/RagPage.jsx'
 import ProjectsPage from './pages/ProjectsPage.jsx'
 import ProjectPage from './pages/ProjectPage.jsx'
+import BuildGuidePage from './pages/BuildGuidePage.jsx'
 
 // Reset scroll on every route change (otherwise navigating keeps the old scroll position).
 function ScrollToTop() {
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/rag" element={<RagPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:slug" element={<ProjectPage />} />
+        <Route path="/projects/:slug/build" element={<BuildGuidePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>

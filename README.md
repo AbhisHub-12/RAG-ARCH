@@ -21,9 +21,10 @@
   - [**NetPulse**](./docs/projects/netpulse.md) — a GenAI network troubleshooting copilot
     (LangGraph agent + Prometheus/syslog/Netmiko/NetBox tools + PGVector RAG + SSE +
     Langfuse/OpenTelemetry, developed against a containerlab sandbox).
+    **[Deep build guide →](./docs/projects/netpulse-build.md)**
   - [**IntentNet**](./docs/projects/intentnet.md) — agentic AI that turns natural-language
     network change requests into validated, human-approved device configs (LangGraph +
-    Pydantic + Jinja2 + Batfish).
+    Pydantic + Jinja2 + Batfish). **[Deep build guide →](./docs/projects/intentnet-build.md)**
 
 It's built as an interactive React site (React Router + Vite) and published on GitHub
 Pages; every lesson and project write-up is also plain, readable markdown in

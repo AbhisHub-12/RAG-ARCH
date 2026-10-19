@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import TopNav from '../components/TopNav.jsx'
 import Footer from '../components/Footer.jsx'
 import FlowStrip from '../components/FlowStrip.jsx'
+import FlowConnections from '../components/FlowConnections.jsx'
 import MarkdownBlock from '../components/MarkdownBlock.jsx'
 import { getProject } from '../data/projects.js'
 
@@ -34,6 +35,19 @@ export default function ProjectPage() {
             note={project.flow.note}
             steps={project.flow.steps}
           />
+
+          <FlowConnections edges={project.flowEdges} tone={project.flow.tone} />
+
+          {project.buildDoc && (
+            <Link to={`/projects/${project.slug}/build`} className="build-cta">
+              <span className="build-cta-icon">🧱</span>
+              <span className="build-cta-text">
+                <strong>Deep build guide</strong>
+                <span>Phase-by-phase, with real copy-pasteable code — build {project.name} from an empty folder.</span>
+              </span>
+              <span className="build-cta-arrow">→</span>
+            </Link>
+          )}
 
           <MarkdownBlock>{project.doc}</MarkdownBlock>
         </div>
