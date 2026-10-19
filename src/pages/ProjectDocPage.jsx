@@ -37,7 +37,7 @@ export default function ProjectDocPage({ which }) {
             <span className="proj-title-icon">{project.icon}</span> {view.title(project)}
           </h1>
           <p className="section-lead">{view.lead}</p>
-          <MarkdownBlock>{project[view.field]}</MarkdownBlock>
+          <MarkdownBlock raw={which === 'interview'}>{project[view.field]}</MarkdownBlock>
         </div>
       </main>
       <Footer />

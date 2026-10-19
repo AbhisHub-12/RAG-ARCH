@@ -289,6 +289,42 @@ a:hover { text-decoration: underline; }
 .markdown th { background: var(--surface-2); color: #fff; }
 .markdown tr:nth-child(even) td { background: rgba(255, 255, 255, 0.02); }
 
+/* collapsible Q&A (details/summary) */
+.markdown details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  margin: 0.55rem 0;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.markdown details[open] { border-color: var(--primary); }
+.markdown summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.markdown summary::-webkit-details-marker { display: none; }
+.markdown summary::before {
+  content: '+';
+  color: var(--accent-2);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+.markdown details[open] summary { border-bottom: 1px solid var(--border-soft); color: #fff; }
+.markdown details[open] summary::before { content: '−'; }
+.markdown summary:hover { background: rgba(255, 255, 255, 0.03); }
+.markdown details > :not(summary) { margin: 0.7rem 1.1rem; }
+.markdown details > p { color: #cfd6ef; }
+.markdown details > ul { color: #cfd6ef; }
+
 /* ---------- pipeline ---------- */
 .pipeline { margin: 1.6rem 0; }
 .pipeline-track {
