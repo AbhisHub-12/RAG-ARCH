@@ -12,10 +12,22 @@
 
 ## What is this?
 
-**RAG-ARCH** teaches you what Retrieval-Augmented Generation (RAG) is and how it works —
-starting from absolute zero, no AI background required. It's built as an interactive
-React site and published on GitHub Pages, and every lesson is also available as plain,
-readable markdown in [`/docs`](./docs).
+**RAG-ARCH** is a two-part hub. The landing page sends you down one of two paths:
+
+- **Learn RAG** — what Retrieval-Augmented Generation (RAG) is and how it works, from
+  absolute zero (no AI background required).
+- **Projects** — real-world GenAI systems built on RAG + agents, with architecture and
+  build guides:
+  - [**NetPulse**](./docs/projects/netpulse.md) — a GenAI network troubleshooting copilot
+    (LangGraph agent + Prometheus/syslog/Netmiko/NetBox tools + PGVector RAG + SSE +
+    Langfuse/OpenTelemetry, developed against a containerlab sandbox).
+  - [**IntentNet**](./docs/projects/intentnet.md) — agentic AI that turns natural-language
+    network change requests into validated, human-approved device configs (LangGraph +
+    Pydantic + Jinja2 + Batfish).
+
+It's built as an interactive React site (React Router + Vite) and published on GitHub
+Pages; every lesson and project write-up is also plain, readable markdown in
+[`/docs`](./docs).
 
 > **RAG in one sentence:** look things up first, then let the AI write the answer using
 > what it found — like taking an open-book exam instead of answering from memory.

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const LINKS = [
   { id: 'what', label: 'What' },
@@ -30,10 +31,10 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'is-scrolled' : ''}`}>
-      <a className="brand" href="#top" onClick={(e) => go(e, 'top')}>
+      <Link className="brand" to="/">
         <span className="brand-mark">◭</span>
         <span className="brand-text">RAG-<strong>ARCH</strong></span>
-      </a>
+      </Link>
 
       <button
         className="nav-toggle"
@@ -50,6 +51,9 @@ export default function Navbar() {
             {l.label}
           </a>
         ))}
+        <Link className="nav-projects" to="/projects" onClick={() => setOpen(false)}>
+          Projects →
+        </Link>
         <a
           className="nav-gh"
           href="https://github.com/AbhisHub-12/RAG-ARCH"
